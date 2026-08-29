@@ -18,38 +18,15 @@ import loginImage from "@/assets/login-image.png";
 import { loginUser } from "@/store/slices/authSlice";
 
 function Login() {
-  // =========================================================
-  // STATE
-  // =========================================================
 
   const [showPassword, setShowPassword] = useState(false);
-
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-
-  // =========================================================
-  // REDUX
-  // =========================================================
-
   const dispatch = useDispatch();
-
-  // =========================================================
-  // NAVIGATION
-  // =========================================================
-
   const navigate = useNavigate();
-
-  // =========================================================
-  // AUTH STATE FROM REDUX
-  // =========================================================
-
   const { loading, error } = useSelector(
     (state) => state.auth
   );
-
-  // =========================================================
-  // LOGIN SUBMIT
-  // =========================================================
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -79,25 +56,13 @@ function Login() {
     }
   };
 
-  // =========================================================
-  // RETURN UI
-  // =========================================================
-
   return (
     <main className="min-h-screen w-full bg-white">
       <div className="grid min-h-screen w-full lg:grid-cols-2">
 
-        {/* =====================================================
-            LEFT SIDE - LOGIN
-        ====================================================== */}
-
         <section className="flex min-h-screen items-center justify-center bg-white px-6 py-10 sm:px-10 lg:px-12 xl:px-20">
 
           <div className="w-full max-w-[430px]">
-
-            {/* =================================================
-                LOGO
-            ================================================== */}
 
             <div className="mb-2 flex flex-col items-center text-center">
 
@@ -129,11 +94,6 @@ function Login() {
 
             </div>
 
-
-            {/* =================================================
-                HEADING
-            ================================================== */}
-
             <div className="mb-2 text-center">
 
               <h2
@@ -155,19 +115,11 @@ function Login() {
             </div>
 
 
-            {/* =================================================
-                LOGIN FORM
-            ================================================== */}
-
             <form
               onSubmit={handleSubmit}
               className="space-y-7"
               autoComplete="off"
             >
-
-              {/* =================================================
-                  USER ID
-              ================================================== */}
 
               <div className="group">
 
@@ -237,11 +189,6 @@ function Login() {
                 </div>
 
               </div>
-
-
-              {/* =================================================
-                  PASSWORD
-              ================================================== */}
 
               <div className="group">
 
@@ -346,11 +293,6 @@ function Login() {
 
               </div>
 
-
-              {/* =================================================
-                  ERROR MESSAGE
-              ================================================== */}
-
               {error && (
                 <div
                   className="
@@ -367,11 +309,6 @@ function Login() {
                   {error}
                 </div>
               )}
-
-
-              {/* =================================================
-                  LOGIN BUTTON
-              ================================================== */}
 
               <Button
                 type="submit"
@@ -406,11 +343,6 @@ function Login() {
 
             </form>
 
-
-            {/* =================================================
-                SECURITY MESSAGE
-            ================================================== */}
-
             <div
               className="
                 mt-8
@@ -431,11 +363,6 @@ function Login() {
 
             </div>
 
-
-            {/* =================================================
-                FOOTER
-            ================================================== */}
-
             <p
               className="
                 mt-8
@@ -450,11 +377,6 @@ function Login() {
           </div>
 
         </section>
-
-
-        {/* =====================================================
-            RIGHT SIDE - IMAGE
-        ====================================================== */}
 
         <section
           className="
@@ -494,11 +416,6 @@ function Login() {
               to-transparent
             "
           />
-
-
-          {/* =================================================
-              RIGHT CONTENT
-          ================================================== */}
 
           <div
             className="
