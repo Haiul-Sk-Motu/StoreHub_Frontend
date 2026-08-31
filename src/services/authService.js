@@ -6,8 +6,6 @@ const login = async (userRequest) => {
     userRequest
   )
 
-  console.log("Response :",response)
-
   return response.data
 }
 

@@ -1,5 +1,5 @@
 import Login from "@/pages/auth/Login";
-import Dashboard from "@/pages/dashboard/dashboard";
+import Dashboard from "@/pages/Dashboard";
 import { Route, Routes } from "react-router-dom";
 
 function AppRoute(){
