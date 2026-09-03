@@ -15,12 +15,14 @@ import {
   UserPlus,
   ChevronDown,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
   const user = useSelector((state) => state.auth.user);
 
   const [storeOpen, setStoreOpen] = useState(false);
   const [staffOpen, setStaffOpen] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-gray-800 bg-gray-950 text-white">
@@ -70,6 +72,7 @@ function Sidebar() {
                   <SubMenuItem
                     icon={<UserPlus size={16} />}
                     label="Create Store"
+                    onClick={() => navigate("/store/CreateStore")} 
                   />
 
                   <SubMenuItem
@@ -210,9 +213,10 @@ function SubMenu({ children }) {
 function SubMenuItem({
   icon,
   label,
+  onClick
 }) {
   return (
-    <button
+    <button onClick={onClick}
       className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-500 transition hover:bg-gray-800 hover:text-white"
     >
       {icon}

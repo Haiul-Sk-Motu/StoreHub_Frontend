@@ -1,5 +1,6 @@
 import Login from "@/pages/auth/Login";
 import Dashboard from "@/pages/Dashboard";
+import CreateStore from "@/pages/store/CreateStore";
 import { Route, Routes } from "react-router-dom";
 
 function AppRoute(){
@@ -8,6 +9,7 @@ function AppRoute(){
             <Route path="/" element={<Login />} />
 
             <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/store/CreateStore" element={<CreateStore/>}/>
         </Routes>
     )
 }
